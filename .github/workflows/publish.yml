@@ -15,8 +15,9 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-        with:
-          ref: ${{ github.event.pull_request.head.ref }}
+      - name: Console branch
+        run: |
+          git checkout
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v2
         with:
