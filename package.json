@@ -4,6 +4,11 @@
   "private": false,
   "repository": "https://github.com/steedos/steedos-project-template.git",
   "description": "",
+  "workspaces": {
+    "packages": [
+      "steedos-app"
+    ]
+  },
   "engines": {
     "node": ">=12"
   },
