@@ -1,9 +1,8 @@
 name: Publish test
 
 on:
-  push:
-    tags:
-      - 'v**'
+  release:
+    types: [published]
 
 jobs:
   release:
