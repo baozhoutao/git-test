@@ -1,9 +1,12 @@
 name: Publish test
 
 on:
+  # push:
+  #   branches:
+  #     - main
   push:
-    branches:
-      - main
+    tags:
+      - 'v**'
 jobs:
   release:
     runs-on: ubuntu-latest
@@ -14,6 +17,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v2
         with:
